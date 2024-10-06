@@ -21,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10  # 选择 Python 版本
+          python-version: 3.10.15  # 选择 Python 版本
 
       - name: Install dependencies
         run: pip3 install -r app/blumtod/requirements.txt
@@ -40,7 +40,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: 3.10.15
 
       - name: Install dependencies
         run: pip3 install -r app/MemeFiBot/requirements.txt
@@ -59,7 +59,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: 3.10.15
 
       - name: Install dependencies
         run: pip3 install -r app/Tomarket/requirements.txt
