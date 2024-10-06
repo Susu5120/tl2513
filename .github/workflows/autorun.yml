@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd blumtod
+          cd app/blumtod
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
@@ -48,7 +48,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd MemeFiBot
+          cd app/MemeFiBot
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
@@ -70,7 +70,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Tomarket
+          cd app/Tomarket
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
