@@ -31,6 +31,8 @@ RUN cd /app &&\
      /app/Tomarket/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/Tomarket/requirements.txt &&\
      chmod +x /app/supervisord.conf
 
+RUN mkdir -p /app/log
+
 COPY /app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["bash","/app/start.sh"]
