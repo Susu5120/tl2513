@@ -1,3 +1,1 @@
-cd /app/blumtod
-source venv/bin/activate
-python3 bot.py -A 6
+/app/blumtod/venv/bin/python3 /app/blumtod/bot.py -A 6
