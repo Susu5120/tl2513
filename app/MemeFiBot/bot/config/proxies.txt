@@ -1,10 +1,10 @@
-http://gmsasybw:ck9c9drinurk@198.23.239.134:6540
-http://gmsasybw:ck9c9drinurk@207.244.217.165:6712
-http://gmsasybw:ck9c9drinurk@107.172.163.27:6543
+#http://gmsasybw:ck9c9drinurk@198.23.239.134:6540
+#http://gmsasybw:ck9c9drinurk@207.244.217.165:6712
+#http://gmsasybw:ck9c9drinurk@107.172.163.27:6543
 http://gmsasybw:ck9c9drinurk@173.211.0.148:6641
 http://gmsasybw:ck9c9drinurk@161.123.152.115:6360
 http://gmsasybw:ck9c9drinurk@216.10.27.159:6837
-http://gmsasybw:ck9c9drinurk@142.147.128.93:6593
-http://gmsasybw:ck9c9drinurk@167.160.180.203:6754
-http://gmsasybw:ck9c9drinurk@198.105.101.92:5721
-http://gmsasybw:ck9c9drinurk@154.36.110.199:6853
+#http://gmsasybw:ck9c9drinurk@142.147.128.93:6593
+#http://gmsasybw:ck9c9drinurk@167.160.180.203:6754
+#http://gmsasybw:ck9c9drinurk@198.105.101.92:5721
+#http://gmsasybw:ck9c9drinurk@154.36.110.199:6853
