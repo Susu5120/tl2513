@@ -14,13 +14,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
 
 COPY app/* /app/
 
-RUN chmod +x /app/build.sh &&\
-     bash /app/build.sh &&\
-     rm -rf /app/build.sh
-     cd /app
-     apt-get update && apt-get install -y supervisor
-     npm install -r package.json
-     chmod +x /app/supervisord.conf
+RUN cd /app &&\
+     apt-get update && apt-get install -y supervisor &&\
+     npm install -r package.json &&\
+     chmod +x /app/supervisord.conf &&\
 
 COPY /app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
