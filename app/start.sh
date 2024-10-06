@@ -17,4 +17,4 @@ screen -S MemeFi -dm
 screen -S MemeFi -X stuff "/app/MemeFiBot/venv/bin/python3 /app/MemeFiBot/main.py -a 2\n"
 screen -S Tomarket -dm
 screen -S Tomarket -X stuff "/app/Tomarket/venv/bin/python3 /app/Tomarket/main.py -a 1\n"
-sleep 20d
+node /app/index.js
