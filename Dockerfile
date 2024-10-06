@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs
 
-COPY app/* /app/
+COPY app/ /app/
 
 RUN cd /app &&\
      apt-get update && apt-get install -y supervisor &&\
