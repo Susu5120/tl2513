@@ -24,10 +24,14 @@ jobs:
           python-version: 3.10.15  # 选择 Python 版本
 
       - name: Install dependencies
-        run: pip3 install -r app/blumtod/requirements.txt
+        run: |
+          cd blumtod
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
 
       - name: Run Blum
-        run: python3 app/blumtod/bot.py -A 6  # 运行第一个Python脚本
+        run: |
+          ./venv/bin/python3 bot.py -A 6  # 运行第一个Python脚本
 
   MemeFi:
     runs-on: ubuntu-latest
@@ -43,10 +47,13 @@ jobs:
           python-version: 3.10.15
 
       - name: Install dependencies
-        run: pip3 install -r app/MemeFiBot/requirements.txt
+        run: |
+          cd MemeFiBot
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
 
       - name: Run Python MemeFi
-        run: python3 app/MemeFiBot/main.py -a 2  # 运行第二个Python脚本
+        run: ./venv/bin/python3 main.py -a 2  # 运行第二个Python脚本
 
   Tomarket:
     runs-on: ubuntu-latest
@@ -62,7 +69,10 @@ jobs:
           python-version: 3.10.15
 
       - name: Install dependencies
-        run: pip3 install -r app/Tomarket/requirements.txt
+        run: |
+          cd Tomarket
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
 
       - name: Run Python Tomarket
-        run: python3 app/Tomarket/main.py -a 1  # 运行第三个Python脚本
+        run: ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
