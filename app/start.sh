@@ -11,9 +11,10 @@ python3 -m venv venv
 /app/Tomarket/venv/bin/pip3 install --upgrade pip setuptools wheel
 /app/Tomarket/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/Tomarket/requirements.txt
 cd /app
-pm2 start /app/index.js --log /dev/null
-sleep 30s
-pm2 start /app/blumtod/start.sh --name Blum --log /app/blum.log
-pm2 start /app/MemeFiBot/start.sh --name MemeFi --log /app/MemeFi.log
-pm2 start /app/Tomarket/start.sh --name Tomarket --log /app/Tomarket.log
+screen -S Blum -dm
+screen -S Blum -X stuff "/app/blumtod/venv/bin/python3 /app/blumtod/bot.py -A 6\n"
+screen -S MemeFi -dm
+screen -S MemeFi -X stuff "/app/MemeFiBot/venv/bin/python3 /app/MemeFiBot/main.py -a 2\n"
+screen -S Tomarket -dm
+screen -S Tomarket -X stuff "/app/Tomarket/venv/bin/python3 /app/Tomarket/main.py -a 1\n"
 sleep 20d
