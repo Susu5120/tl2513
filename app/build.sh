@@ -1,4 +1,6 @@
 npm install -g pm2
+cd /app
+npm install -r package.json
 cd /app/blumtod
 python3 -m venv venv
 source venv/bin/activate
