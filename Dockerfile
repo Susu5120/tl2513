@@ -18,4 +18,6 @@ RUN chmod +x /app/build.sh &&\
      bash /app/build.sh &&\
      rm -rf /app/build.sh
 
+COPY /app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 CMD ["bash","/app/start.sh"]
