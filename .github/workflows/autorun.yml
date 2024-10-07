@@ -1,9 +1,9 @@
-#name: Run Autoclaim
+name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */12 * * *'
+  #schedule:
+#    - cron: '0 */12 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
