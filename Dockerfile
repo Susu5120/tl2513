@@ -10,13 +10,17 @@ RUN apt-get update && apt-get install -y \
 
 # 安装 Node.js 和 PM2
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs
+    apt-get install -y nodejs &&\
+    npm install -g pm2
 
 COPY app/ /app/
 
 RUN apt-get update && apt-get install -y supervisor &&\
      npm install -r package.json &&\
-     chmod +x /app/supervisord.conf
+     curl -sLo /app/warp/wireproxy.tar.gz https://github.com/pufferffish/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz &&\
+     tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
+     rm -rf /app/warp/wireproxy.tar.gz &&\
+     chmod +x /app/supervisord.conf /app/warp/wireproxy
 
 RUN mkdir -p /app/log
 

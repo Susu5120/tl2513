@@ -1,0 +1,1 @@
+/app/warp/wireproxy -c /app/warp/wireproxy.conf
