@@ -27,4 +27,4 @@ RUN mkdir -p /app/log
 
 COPY /app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-CMD ["bash","/app/bash.sh"]
+CMD ["bash","/app/start.sh"]
