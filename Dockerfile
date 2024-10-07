@@ -18,7 +18,8 @@ COPY app/ /app/
 RUN apt-get update && apt-get install -y supervisor &&\
      npm install -r package.json &&\
      wget -O /app/warp/wireproxy.tar.gz https://github.com/pufferffish/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz &&\
-     tar xzvf /app/warp/wireproxy.tar.gz /app/warp/wireproxy &&\
+     cd /app/warp &&\
+     tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
      rm -rf /app/warp/wireproxy.tar.gz &&\
      chmod +x /app/supervisord.conf /app/warp/wireproxy
 
