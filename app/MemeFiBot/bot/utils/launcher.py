@@ -27,7 +27,7 @@ Select an action:
 
 
 def get_session_names() -> list[str]:
-    session_names = glob.glob('sessions/*.session')
+    session_names = glob.glob('session/*.session')
     session_names = [os.path.splitext(os.path.basename(file))[0] for file in session_names]
 
     return session_names
@@ -56,7 +56,7 @@ async def get_tg_clients() -> list[Client]:
         name=session_name,
         api_id=settings.API_ID,
         api_hash=settings.API_HASH,
-        workdir='sessions/',
+        workdir='session/',
         plugins=dict(root='bot/plugins')
     ) for session_name in session_names]
 
