@@ -6,7 +6,7 @@ cd /app/blumtod
 /app/blumtod/venv/bin/pip3 install --upgrade pip setuptools wheel
 /app/blumtod/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/blumtod/requirements.txt
 pm2 start /app/blumtod/start.sh --name Blum --log /app/blum.log
-#cd /app/MemeFiBot
+cd /app/MemeFiBot
 #python3 -m venv venv
 /app/MemeFiBot/venv/bin/pip3 install --upgrade pip setuptools wheel
 /app/MemeFiBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/MemeFiBot/requirements.txt
