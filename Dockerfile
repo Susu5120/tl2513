@@ -9,19 +9,18 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装 Node.js 和 PM2
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs &&\
     npm install -g pm2
 
 COPY app/ /app/
 
-RUN apt-get update && apt-get install -y supervisor &&\
-     npm install -r package.json &&\
+RUN npm install -r package.json &&\
      wget -O /app/warp/wireproxy.tar.gz https://github.com/pufferffish/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz &&\
      cd /app/warp &&\
      tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
      rm -rf /app/warp/wireproxy.tar.gz &&\
-     chmod +x /app/supervisord.conf /app/warp/wireproxy &&\
+     chmod +x /app/warp/wireproxy &&\
      cd /app/blumtod &&\
      python3 -m venv venv &&\
      /app/blumtod/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
@@ -36,7 +35,5 @@ RUN apt-get update && apt-get install -y supervisor &&\
      /app/Tomarket/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/Tomarket/requirements.txt
 
 RUN mkdir -p /app/log
-
-COPY /app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["bash","/app/start.sh"]
