@@ -1,0 +1,1 @@
+/app/YesCoinBot/venv/bin/python3 /app/YesCoinBot/main.py -a 2

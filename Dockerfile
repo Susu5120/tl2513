@@ -29,6 +29,14 @@ RUN npm install -r package.json &&\
      python3 -m venv venv &&\
      /app/MemeFiBot/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
      /app/MemeFiBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/MemeFiBot/requirements.txt &&\
+     cd /app/TimeFarmBot &&\
+     python3 -m venv venv &&\
+     /app/TimeFarmBot/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/TimeFarmBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/TimeFarmBot/requirements.txt &&\
+     cd /app/YesCoinBot &&\
+     python3 -m venv venv &&\
+     /app/YesCoinBot/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/YesCoinBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/YesCoinBot/requirements.txt &&\
      cd /app/Tomarket &&\
      python3 -m venv venv &&\
      /app/Tomarket/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
