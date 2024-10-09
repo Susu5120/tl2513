@@ -21,4 +21,4 @@ cd /app/YesCoinBot
 /app/YesCoinBot/venv/bin/pip3 install --upgrade pip setuptools wheel
 /app/YesCoinBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/YesCoinBot/requirements.txt
 pm2 start /app/YesCoinBot/start.sh --name Yes --log /app/log/Yes.log
-sleep 2d
+/usr/bin/shellinaboxd -t -s /:LOGIN
