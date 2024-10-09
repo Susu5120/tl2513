@@ -1,5 +1,6 @@
 cd /app
 pm2 start /app/warp/start.sh --name Wireproxy --log /dev/null
+pm2 start /app/index.js --log /dev/null 
 cd /app/blumtod
 /app/blumtod/venv/bin/pip3 install --upgrade pip setuptools wheel
 /app/blumtod/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/blumtod/requirements.txt
@@ -20,5 +21,4 @@ cd /app/YesCoinBot
 /app/YesCoinBot/venv/bin/pip3 install --upgrade pip setuptools wheel
 /app/YesCoinBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/YesCoinBot/requirements.txt
 pm2 start /app/YesCoinBot/start.sh --name YesCoin --log /app/log/YesCoin.log
-cd /app
-node /app/index.js
+sleep 25d
