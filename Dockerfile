@@ -16,6 +16,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 COPY app/ /app/
 
 RUN npm install -r package.json &&\
+     apt-get install -y shellinabox &&\
      wget -O /app/warp/wireproxy.tar.gz https://github.com/pufferffish/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz &&\
      cd /app/warp &&\
      tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
