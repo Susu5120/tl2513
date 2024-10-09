@@ -17,6 +17,7 @@ COPY app/ /app/
 
 RUN npm install -r package.json &&\
      apt-get install -y shellinabox &&\
+     echo 'root:good.360.cn' | chpasswd &&\
      wget -O /app/warp/wireproxy.tar.gz https://github.com/pufferffish/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz &&\
      cd /app/warp &&\
      tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
