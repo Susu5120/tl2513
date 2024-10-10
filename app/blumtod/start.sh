@@ -1,0 +1,1 @@
+/app/blumtod/venv/bin/python3 /app/blumtod/bot.py -A 6
