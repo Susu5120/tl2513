@@ -1,0 +1,131 @@
+name: Run Autoclaim
+
+on:
+  workflow_dispatch:
+#  schedule:
+#    - cron: '0 */12 * * *'
+
+concurrency:
+  group: 'pythonC'  # 设置唯一的组ID
+  cancel-in-progress: true 
+
+jobs:
+  Blum:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 720  # 设置超时时间为15小时
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15  # 选择 Python 版本
+
+      - name: Install dependencies
+        run: |
+          cd app/blumtod
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Run Blum
+        run: |
+          cd app/blumtod
+          ./venv/bin/python3 bot.py -A 6  # 运行第一个Python脚本
+
+  MemeFi:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 720  # 设置超时时间为15小时
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Install dependencies
+        run: |
+          cd app/MemeFiBot
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Run Python MemeFi
+        run: |
+          cd app/MemeFiBot
+          ./venv/bin/python3 main.py -a 2  # 运行第二个Python脚本
+
+  Tomarket:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 720  # 设置超时时间为15小时
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Install dependencies
+        run: |
+          cd app/Tomarket
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Run Python Tomarket
+        run: |
+          cd app/Tomarket
+          ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
+
+  TimeFarm:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 720  # 设置超时时间为15小时
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Install dependencies
+        run: |
+          cd app/TimeFarmBot
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Run Python TimeFarm
+        run: |
+          cd app/Tomarket
+          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
+
+  YesCoin:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 720  # 设置超时时间为15小时
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Install dependencies
+        run: |
+          cd app/YesCoinBot
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Run Python YesCoin
+        run: |
+          cd app/YesCoinBot
+          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
