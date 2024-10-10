@@ -23,26 +23,25 @@ RUN npm install -r package.json &&\
      tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
      rm -rf /app/warp/wireproxy.tar.gz &&\
      chmod +x /app/warp/wireproxy &&\
-     cd /app/blumtod &&\
-     python3 -m venv venv &&\
-     /app/blumtod/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/blumtod/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/blumtod/requirements.txt &&\
-     cd /app/MemeFiBot &&\
-     python3 -m venv venv &&\
-     /app/MemeFiBot/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/MemeFiBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/MemeFiBot/requirements.txt &&\
-     cd /app/TimeFarmBot &&\
-     python3 -m venv venv &&\
-     /app/TimeFarmBot/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/TimeFarmBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/TimeFarmBot/requirements.txt &&\
-     cd /app/YesCoinBot &&\
-     python3 -m venv venv &&\
-     /app/YesCoinBot/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/YesCoinBot/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/YesCoinBot/requirements.txt &&\
-     cd /app/Tomarket &&\
-     python3 -m venv venv &&\
-     /app/Tomarket/venv/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/Tomarket/venv/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/Tomarket/requirements.txt
+     mkdir /app/python3
+     chmod +x /app/python3 &&\
+     cd /app/python3 &&\
+     python3 -m venv /app/python3/1 &&\
+     /app/python3/1/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/python3/1/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/1-bl.txt &&\
+     python3 -m venv /app/python3/2 &&\
+     /app/python3/2/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/python3/2/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/2-meme.txt &&\
+     python3 -m venv /app/python3/3 &&\
+     /app/python3/3/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/python3/3/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/3-TF.txt &&\
+     python3 -m venv /app/python3/4 &&\
+     /app/python3/4/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/python3/4/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/4-To.txt &&\
+     python3 -m venv /app/python3/5 &&\
+     /app/python3/5/bin/pip3 install --upgrade pip setuptools wheel &&\
+     /app/python3/5/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/5-YCB.txt &&\
+     rm -rf /app/install
 
 RUN mkdir -p /app/log
 
