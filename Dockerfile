@@ -1,5 +1,5 @@
 FROM python:3.10.15-bullseye
-EXPOSE 3000
+EXPOSE 4200
 WORKDIR /app
 
 # 安装必要的系统工具和依赖
