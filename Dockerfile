@@ -23,7 +23,7 @@ RUN npm install -r package.json &&\
      tar xzvf /app/warp/wireproxy.tar.gz wireproxy &&\
      rm -rf /app/warp/wireproxy.tar.gz &&\
      chmod +x /app/warp/wireproxy &&\
-     mkdir /app/python3
+     mkdir /app/python3 &&\
      chmod +x /app/python3 &&\
      cd /app/python3 &&\
      python3 -m venv /app/python3/1 &&\
