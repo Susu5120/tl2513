@@ -58,19 +58,18 @@
   "outbounds": [
     {
       "tag": "WARP",
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
         "vnext": [
           {
-            "address": "pvl-20e.pages.dev",
-            "port": 443,
+            "address": "162.159.153.2",
+            "port": 8443,
             "users": [
               {
-                "id": "3eab6f1a-0e0b-437a-a223-32c03b9167d2",
+                "id": "9d40f076-8886-4550-a7c4-b7641778592d",
                 "alterId": 0,
                 "email": "t@t.tt",
-                "security": "auto",
-                "encryption": "none"
+                "security": "auto"
               }
             ]
           }
@@ -81,14 +80,16 @@
         "security": "tls",
         "tlsSettings": {
           "allowInsecure": true,
-          "serverName": "pvl-20e.pages.dev",
-          "fingerprint": "firefox",
-          "show": false
+          "serverName": "koyeb-us-ray.cloudlinksu.us.kg",
+          "alpn": [
+            "http/1.1"
+          ],
+          "fingerprint": "firefox"
         },
         "wsSettings": {
-          "path": "/?ed=2048",
+          "path": "/koyeb-warp?ed=2048",
           "headers": {
-            "Host": "pvl-20e.pages.dev",
+            "Host": "koyeb-us-ray.cloudlinksu.us.kg",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0"
           }
         }
