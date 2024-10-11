@@ -12,8 +12,7 @@ concurrency:
 jobs:
   Delete:
     runs-on: ubuntu-latest
-    continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
+    continue-on-error: true  # 设置超时时间为15小时
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
