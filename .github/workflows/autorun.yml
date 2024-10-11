@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
+#  schedule:
+#    - cron: '0 */6 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -13,7 +13,7 @@ jobs:
   Blum:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 720  # 设置超时时间为15小时
+    timeout-minutes: 360  # 设置超时时间为15小时
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -43,7 +43,7 @@ jobs:
   MemeFi:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 720  # 设置超时时间为15小时
+    timeout-minutes: 360  # 设置超时时间为15小时
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -73,7 +73,7 @@ jobs:
   TimeFarm:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 720  # 设置超时时间为15小时
+    timeout-minutes: 360  # 设置超时时间为15小时
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -95,7 +95,7 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
-      - name: Run Python Tomarket
+      - name: Run Python TimeFarm
         run: |
           cd app/3
           ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
@@ -103,7 +103,7 @@ jobs:
   Tomarket:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 720  # 设置超时时间为15小时
+    timeout-minutes: 360  # 设置超时时间为15小时
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -125,7 +125,7 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
-      - name: Run Python TimeFarm
+      - name: Run Python Tomarket
         run: |
           cd app/4
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
@@ -133,7 +133,7 @@ jobs:
   YesCoin:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 720  # 设置超时时间为15小时
+    timeout-minutes: 360  # 设置超时时间为15小时
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
