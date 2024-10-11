@@ -1,0 +1,20 @@
+name: Delete Old workflow
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */15 * * *'
+
+jobs:
+  autodel:
+      runs-on: ubuntu-latest
+      name: "Delete Old workflow"
+
+      steps:
+      - name: Delete old workflow runs
+        uses: Suyunmeng/delete-old-workflow-runs@main
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          repository: ${{ github.repository }}
+          older-than-seconds: 3600
