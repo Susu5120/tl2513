@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '0 */12 * * *'
+  schedule:
+    - cron: '0 */6 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -98,7 +98,7 @@ jobs:
       - name: Run Python Tomarket
         run: |
           cd app/3
-          ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
+          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
 
   TimeFarm:
     runs-on: ubuntu-latest
@@ -128,7 +128,7 @@ jobs:
       - name: Run Python TimeFarm
         run: |
           cd app/4
-          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
+          ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
 
   YesCoin:
     runs-on: ubuntu-latest
