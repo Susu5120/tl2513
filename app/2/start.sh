@@ -1,0 +1,1 @@
+/app/MemeFiBot/venv/bin/python3 /app/MemeFiBot/main.py -a 2
