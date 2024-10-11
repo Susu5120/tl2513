@@ -10,21 +10,6 @@ concurrency:
   cancel-in-progress: true 
 
 jobs:
-  Delete:
-    runs-on: ubuntu-latest
-    continue-on-error: true  # 设置超时时间为15小时
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Delete old workflow runs
-        uses: Suyunmeng/delete-old-workflow-runs@main
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          repository: ${{ github.repository }}
-          older-than-seconds: 3600
-
   Blum:
     runs-on: ubuntu-latest
     continue-on-error: true
