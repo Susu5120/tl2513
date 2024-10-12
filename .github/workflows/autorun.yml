@@ -89,8 +89,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/2/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/2/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/2/sessions/Susus.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus.session
+          wget ${{ env.SESSION_CONFIG }}/2/sessions/Susus-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
 
       - name: Run Python MemeFi
         run: |
@@ -184,8 +184,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/4/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/4/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/4/sessions/Susus.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus.session
+          wget ${{ env.SESSION_CONFIG }}/4/sessions/Susus-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
 
       - name: Run Python Tomarket
         run: |
