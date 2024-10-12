@@ -66,7 +66,7 @@
             "port": 8443,
             "users": [
               {
-                "id": "9d40f076-8886-4550-a7c4-b7641778592d",
+                "id": "4dad8c6b-3bdf-4385-b864-19ead20d8665",
                 "alterId": 0,
                 "email": "t@t.tt",
                 "security": "auto"
@@ -80,7 +80,7 @@
         "security": "tls",
         "tlsSettings": {
           "allowInsecure": true,
-          "serverName": "koyeb-us-ray.cloudlinksu.us.kg",
+          "serverName": "koyeb-eu-ray.cloudlinksu.us.kg",
           "alpn": [
             "http/1.1"
           ],
@@ -89,7 +89,7 @@
         "wsSettings": {
           "path": "/koyeb-warp?ed=2048",
           "headers": {
-            "Host": "koyeb-us-ray.cloudlinksu.us.kg",
+            "Host": "koyeb-eu-ray.cloudlinksu.us.kg",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0"
           }
         }
