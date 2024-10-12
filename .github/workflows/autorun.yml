@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */15 * * *'
+#  schedule:
+#    - cron: '0 */15 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -80,14 +80,20 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
-      - name: Run Python MemeFi
+      - name: Downloads Data
         run: |
           cd app/2
           wget ${{ env.SESSION_CONFIG }}/2/.env
-          wget -O sessions/Suyunjing-1.session ${{ env.SESSION_CONFIG }}/2/sessions/Suyunjing-1.session
-          wget -O sessions/Sumengjing-2.session ${{ env.SESSION_CONFIG }}/2/sessions/Sumengjing-2.session
-          wget -O sessions/Susus.session ${{ env.SESSION_CONFIG }}/2/sessions/Susus.session
-          chmod +x sessions/Suyunjing-1.session sessions/Sumengjing-2.session sessions/Susus.session .env
+          chmod +x .env
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/2/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/2/sessions/Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/2/sessions/Susus.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susus.session
+
+      - name: Run Python MemeFi
+        run: |
+          cd app/2
           ./venv/bin/python3 main.py -a 2  # 运行第二个Python脚本
 
   TimeFarm:
@@ -121,13 +127,19 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
-      - name: Run Python TimeFarm
+      - name: Downloads Data
         run: |
           cd app/3
           wget ${{ env.SESSION_CONFIG }}/3/.env
-          wget -O sessions/Suyunjing-1.session ${{ env.SESSION_CONFIG }}/3/sessions/Suyunjing-1.session
-          wget -O sessions/Sumengjing-2.session ${{ env.SESSION_CONFIG }}/3/sessions/Sumengjing-2.session
-          chmod +x sessions/Suyunjing-1.session sessions/Sumengjing-2.session .env
+          chmod +x .env
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/3/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/3/sessions/Sumengjing-2.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session
+
+      - name: Run Python TimeFarm
+        run: |
+          cd app/3
           ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
 
   Tomarket:
@@ -161,14 +173,20 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
-      - name: Run Python Tomarket
+      - name: Downloads Data
         run: |
           cd app/4
           wget ${{ env.SESSION_CONFIG }}/4/.env
-          wget -O sessions/Suyunjing-1.session ${{ env.SESSION_CONFIG }}/4/sessions/Suyunjing-1.session
-          wget -O sessions/Sumengjing-2.session ${{ env.SESSION_CONFIG }}/4/sessions/Sumengjing-2.session
-          wget -O sessions/Susus.session ${{ env.SESSION_CONFIG }}/4/sessions/Susus.session
-          chmod +x sessions/Suyunjing-1.session sessions/Sumengjing-2.session sessions/Susus.session .env
+          chmod +x .env
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/4/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/4/sessions/Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/4/sessions/Susus.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susus.session
+
+      - name: Run Python Tomarket
+        run: |
+          cd app/4
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
 
   YesCoin:
@@ -202,11 +220,17 @@ jobs:
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
-      - name: Run Python YesCoin
+      - name: Downloads Data
         run: |
           cd app/5
           wget ${{ env.SESSION_CONFIG }}/5/.env
-          wget -O sessions/Suyunjing-1.session ${{ env.SESSION_CONFIG }}/5/sessions/Suyunjing-1.session
-          wget -O sessions/Sumengjing-2.session ${{ env.SESSION_CONFIG }}/5/sessions/Sumengjing-2.session
-          chmod +x sessions/Suyunjing-1.session sessions/Sumengjing-2.session .env
+          chmod +x .env
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/5/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/5/sessions/Sumengjing-2.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session
+
+      - name: Run Python YesCoin
+        run: |
+          cd app/5
           ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
