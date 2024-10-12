@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */15 * * *'
+#  schedule:
+#    - cron: '0 */15 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -85,6 +85,7 @@ jobs:
           cd app/2
           wget ${{ env.SESSION_CONFIG }}/2/.env
           chmod +x .env
+          mkdir sessions
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/2/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/2/sessions/Sumengjing-2.session
@@ -132,6 +133,7 @@ jobs:
           cd app/3
           wget ${{ env.SESSION_CONFIG }}/3/.env
           chmod +x .env
+          mkdir sessions
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/3/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/3/sessions/Sumengjing-2.session
@@ -178,6 +180,7 @@ jobs:
           cd app/4
           wget ${{ env.SESSION_CONFIG }}/4/.env
           chmod +x .env
+          mkdir sessions
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/4/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/4/sessions/Sumengjing-2.session
@@ -225,6 +228,7 @@ jobs:
           cd app/5
           wget ${{ env.SESSION_CONFIG }}/5/.env
           chmod +x .env
+          mkdir sessions
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/5/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/5/sessions/Sumengjing-2.session
