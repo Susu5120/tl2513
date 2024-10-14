@@ -13,6 +13,7 @@ jobs:
   Blum:
     runs-on: ubuntu-latest
     continue-on-error: true
+    if: 'true'
     timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
