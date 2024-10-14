@@ -59,7 +59,7 @@ class Accounts:
         available_accounts = self.get_available_accounts(sessions)
 
         if not available_accounts:
-            raise ValueError("Have not available accounts!")
+            raise ValueError("Available accounts not found! Please add accounts in 'sessions' folder")
         else:
             logger.success(f"Available accounts: {len(available_accounts)}.")
 

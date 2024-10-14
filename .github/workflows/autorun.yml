@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */15 * * *'
+#  schedule:
+#    - cron: '0 */15 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -284,9 +284,10 @@ jobs:
           cd app/6
           ./venv/bin/python3 main.py  # 运行第三个Python脚本
 
-  Notpixel:
+  CatVSDog:
     runs-on: ubuntu-latest
     continue-on-error: true
+    if: true
     timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -324,11 +325,10 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
           wget ${{ env.SESSION_CONFIG }}/7/sessions/accounts.json
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session accounts.json
 
-      - name: Run Python Notpixel
+      - name: Run Python CatVSDog
         run: |
           cd app/7
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本

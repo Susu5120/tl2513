@@ -1,53 +1,31 @@
-[![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/notpixel/app?startapp=f7253650410)
+[![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/catsdogs_game_bot/join?startapp=1201989442)
 
 ## Recommendation before use
 
 # 🔥🔥 Use PYTHON 3.10 🔥🔥
 
-> 🇷 🇺 README in russian available [here](README-RU.md)
-
 ## Features  
-| Feature                               | Supported |
-|---------------------------------------|:---------:|
-| Multithreading                        |     ✅     |
-| Proxy binding to session              |     ✅     |
-| User-Agent binding to session         |     ✅     |
-| Support for tdata / pyrogram .session |     ✅     |
-| Registration in bot                   |     ✅     |
-| Auto-paint                            |     ✅     |
-| Auto-tasks                            |     ✅     |
-| Auto-claim mining rewards             |     ✅     |
-| Auto-upgrade boosters                 |     ✅     |
-| Night sleep mode                      |     ✅     |
-| Analytics game events                 |     ✅     |
+| Feature                                                   | Supported |
+|-----------------------------------------------------------|:---------:|
+| Multithreading                                            |     ✅     |
+| Proxy binding to session                                  |     ✅     |
+| User-Agent binding to session                             |     ✅     |
+| Support pyrogram .session                                 |     ✅     |
+| Registration in bot                                       |     ✅     |
+| Auto-tasks                                                |     ✅     |
+| Daily rewards                                             |     ✅     |
 
 
 
-
-## [Settings](https://github.com/Desamod/NotPixelBot/blob/master/.env-example/)
-| Settings                   |                                 Description                                 |
-|----------------------------|:---------------------------------------------------------------------------:|
-| **API_ID / API_HASH**      | Platform data from which to run the Telegram session (by default - android) |
-| **SLEEP_TIME**             |            Sleep time between cycles (by default - [3000, 8000])            |
-| **START_DELAY**            |           Delay between sessions at start (by default - [5, 60])            |
-| **AUTO_PAINT**             |                      Auto painting (by default - True)                      |
-| **EXTRA_POINTS_MODE**      |               Drawing art with x3 points (by default - False)               |
-| **AUTO_UPGRADE**           |                  Auto upgrade boosters (by default - True)                  |
-| **AUTO_MINING**            |                Auto claim mining reward (by default - True)                 |
-| **AUTO_TASK**              |                       Auto tasks (by default - True)                        |
-| **AUTO_UPGRADE_PAINT**     |                Auto upgrade paint reward (by default - True)                |
-| **MAX_PAINT_LEVEL**        |                Max level for paint booster (by default - 5)                 |
-| **AUTO_UPGRADE_CHARGE**    |               Auto upgrade recharge speed (by default - True)               |
-| **MAX_CHARGE_LEVEL**       |               Max level for recharge booster (by default - 5)               |
-| **AUTO_UPGRADE_ENERGY**    |                Auto upgrade energy limit (by default - True)                |
-| **MAX_ENERGY_LEVEL**       |                Max level for energy booster (by default - 2)                |
-| **USE_RANDOM_COLOR**       |               Use random color from game (by default - True)                |
-| **OWN_COLOR**              |        Own color if USE_RANDOM_COLOR is False (by default - #FFFFFF)        |
-| **NIGHT_SLEEP**            |                  Extra sleep at night (by default - True)                   |
-| **NIGHT_SLEEP_START_TIME** |          Time (hour) when Night mode starts (by default - [0, 2])           |
-| **NIGHT_SLEEP_END_TIME**   |           Time (hour) when Night mode ends (by default - [5, 7])            |
-| **REF_ID**                 |                          Ref link for registration                          |
-
+## [Settings]
+| Settings                |                                 Description                                 |
+|-------------------------|:---------------------------------------------------------------------------:|
+| **API_ID / API_HASH**   | Platform data from which to run the Telegram session (by default - android) |
+| **SLEEP_TIME**          |           Sleep time between cycles (by default - [7200, 10800])            |
+| **START_DELAY**         |            Delay between sessions at start (by default - [5, 25])           |
+| **AUTO_TASK**           |                         Auto tasks (default - True)                         |
+| **JOIN_CHANNELS**       |              Auto-join for tg channels tasks (default - True)               |
+| **CLAIM_REWARD**        |                             Claim daily reward                              |
 
 ## Quick Start 📚
 
@@ -63,10 +41,9 @@ Before you begin, make sure you have the following installed:
 3. Record the API_ID and API_HASH provided after registering your application in the .env file.
 
 ## Installation
-You can download the [**repository**](https://github.com/Desamod/NotPixelBot) by cloning it to your system and installing the necessary dependencies:
+You can download the [**repository**](https://github.com/vadymfedorets/CatsvsDogs) by cloning it to your system and installing the necessary dependencies:
 ```shell
-git clone https://github.com/Desamod/NotPixelBot
-cd NotPixelBot
+git clone https://github.com/vadymfedorets/CatsvsDogs
 ```
 
 Then you can do automatic installation by typing:
@@ -91,12 +68,6 @@ nano .env  # Here you must specify your API_ID and API_HASH, the rest is taken b
 python3 main.py
 ```
 
-You can also use arguments for quick start, for example:
-```shell
-~/NotPixelBot >>> python3 main.py --action (1/2)
-# Or
-~/NotPixelBot >>> python3 main.py -a (1/2)
-
 # 1 - Run clicker
 # 2 - Creates a session
 ```
@@ -110,12 +81,6 @@ copy .env-example .env
 # Here you must specify your API_ID and API_HASH, the rest is taken by default
 python main.py
 ```
-
-You can also use arguments for quick start, for example:
-```shell
-~/NotPixelBot >>> python main.py --action (1/2)
-# Or
-~/NotPixelBot >>> python main.py -a (1/2)
 
 # 1 - Run clicker
 # 2 - Creates a session
@@ -136,12 +101,6 @@ Here is an example of what accounts.json should look like:
   }
 ]
 ```
-
-### Contacts
-
-For support or questions, you can contact me
-
-[![Static Badge](https://img.shields.io/badge/Telegram-Channel-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/desforge_cryptwo)
 
 
 
