@@ -312,7 +312,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd app/4
+          cd app/7
           python3 -m venv venv
           ./venv/bin/pip3 install -r requirements.txt
 
@@ -332,4 +332,100 @@ jobs:
       - name: Run Python Notpixel
         run: |
           cd app/7
+          ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
+
+  Major:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 900  # 设置超时时间为15小时
+    env:
+      WP_CONFIG: ${{ secrets.WARP_CONFIG }}
+      SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Connect InnerWeb
+        run: |
+          mkdir app/warp
+          cd app/warp
+          wget https://github.com/Suyunmeng/pfile/releases/download/public-packages/web.js
+          wget ${{ env.WP_CONFIG }}
+          chmod +x web.js test.json
+          nohup ./web.js -c test.json &
+
+      - name: Install dependencies
+        run: |
+          cd app/8
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Downloads Data
+        run: |
+          cd app/8
+          wget ${{ env.SESSION_CONFIG }}/8/.env
+          chmod +x .env
+          mkdir sessions
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+
+      - name: Run Python Major
+        run: |
+          cd app/8
+          ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
+
+  Boinkers:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 900  # 设置超时时间为15小时
+    env:
+      WP_CONFIG: ${{ secrets.WARP_CONFIG }}
+      SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Connect InnerWeb
+        run: |
+          mkdir app/warp
+          cd app/warp
+          wget https://github.com/Suyunmeng/pfile/releases/download/public-packages/web.js
+          wget ${{ env.WP_CONFIG }}
+          chmod +x web.js test.json
+          nohup ./web.js -c test.json &
+
+      - name: Install dependencies
+        run: |
+          cd app/9
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Downloads Data
+        run: |
+          cd app/9
+          wget ${{ env.SESSION_CONFIG }}/9/.env
+          chmod +x .env
+          mkdir sessions
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+
+      - name: Run Python Boinkers
+        run: |
+          cd app/9
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
