@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */15 * * *'
+#  schedule:
+#    - cron: '0 */15 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -138,8 +138,7 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session
 
       - name: Run Python TimeFarm
         run: |
