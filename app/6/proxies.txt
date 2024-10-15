@@ -1,4 +1,1 @@
-socks5://gmsasybw-1:ck9c9drinurk@p.webshare.io:80
-socks5://gmsasybw-2:ck9c9drinurk@p.webshare.io:80
-socks5://gmsasybw-3:ck9c9drinurk@p.webshare.io:80
-socks5://127.0.0.1:40000
+socks5://warp:good.360.cn@127.0.0.1:40000

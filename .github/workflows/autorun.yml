@@ -90,8 +90,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session
 
       - name: Run Python MemeFi
         run: |
@@ -185,8 +185,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session
 
       - name: Run Python Tomarket
         run: |
@@ -233,8 +233,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session
 
       - name: Run Python YesCoin
         run: |
@@ -244,7 +244,7 @@ jobs:
   Duckchain:
     runs-on: ubuntu-latest
     continue-on-error: true
-    if: 'false'
+    if: 'true'
     timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -325,6 +325,7 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
           wget ${{ env.SESSION_CONFIG }}/7/sessions/accounts.json
           chmod +x Suyunjing-1.session Sumengjing-2.session accounts.json
 
@@ -373,8 +374,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session
 
       - name: Run Python Major
         run: |
@@ -421,10 +422,61 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          wget ${{ env.SESSION_CONFIG }}/sessions/Susus-3.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session Susus-3.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session
 
       - name: Run Python Boinkers
         run: |
           cd app/9
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
+
+  ALL(Goat\cex.io):
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    if: true
+    timeout-minutes: 900  # 设置超时时间为15小时
+    env:
+      WP_CONFIG: ${{ secrets.WARP_CONFIG }}
+      SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.15
+
+      - name: Connect InnerWeb
+        run: |
+          mkdir app/warp
+          cd app/warp
+          wget https://github.com/Suyunmeng/pfile/releases/download/public-packages/web.js
+          wget ${{ env.WP_CONFIG }}
+          chmod +x web.js test.json
+          nohup ./web.js -c test.json &
+
+      - name: Install dependencies
+        run: |
+          cd app/7
+          python3 -m venv venv
+          ./venv/bin/pip3 install -r requirements.txt
+
+      - name: Downloads Data
+        run: |
+          cd app/10
+          wget ${{ env.SESSION_CONFIG }}/10/.env
+          chmod +x .env
+          cd global_data
+          mkdir sessions
+          cd sessions
+          wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          wget ${{ env.SESSION_CONFIG }}/10/sessions/accounts.json
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session accounts.json
+
+      - name: Run Python ALL(Goat\cex.io)
+        run: |
+          cd app/7
+          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本

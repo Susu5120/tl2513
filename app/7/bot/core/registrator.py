@@ -42,8 +42,10 @@ async def get_tg_client(session_name: str, proxy: str | None) -> Client:
 
     proxy_dict = {
         "scheme": proxy.split(":")[0],
-        "hostname": proxy.split(":")[1],
-        "port": int(proxy.split(":")[2])
+        "username": proxy.split(":")[1].split("//")[1],
+        "password": proxy.split(":")[2],
+        "hostname": proxy.split(":")[3],
+        "port": int(proxy.split(":")[4])
     } if proxy else None
 
     tg_client = Client(
