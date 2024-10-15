@@ -13,7 +13,7 @@ jobs:
   Blum:
     runs-on: ubuntu-latest
     continue-on-error: true
-    if: 'true'
+    if: 'false'
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -51,6 +51,7 @@ jobs:
 
   MemeFi:
     runs-on: ubuntu-latest
+    if: 'false'
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -98,6 +99,7 @@ jobs:
 
   TimeFarm:
     runs-on: ubuntu-latest
+    if: 'false'
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -144,6 +146,7 @@ jobs:
 
   Tomarket:
     runs-on: ubuntu-latest
+    if: 'false'
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -191,6 +194,7 @@ jobs:
 
   YesCoin:
     runs-on: ubuntu-latest
+    if: 'false'
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -239,7 +243,7 @@ jobs:
   Duckchain:
     runs-on: ubuntu-latest
     continue-on-error: true
-    if: 'true'
+    if: 'false'
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -281,7 +285,7 @@ jobs:
   ALL-goat-sexio:
     runs-on: ubuntu-latest
     continue-on-error: true
-    if: false
+    if: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -330,6 +334,7 @@ jobs:
 
   Major:
     runs-on: ubuntu-latest
+    if: 'false'
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -377,6 +382,7 @@ jobs:
 
   Boinkers:
     runs-on: ubuntu-latest
+    if: 'false'
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
