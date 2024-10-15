@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     ACTIVE_BOTS: dict[str, bool] = {
     "blum" : False,
     "catsgang" : False,
-    "catsvsdogs" : False,
+    "catsvsdogs" : True,
     "cexio" : True,
     "goats" : True,
     "major" : False,
