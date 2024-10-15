@@ -281,7 +281,7 @@ jobs:
   ALL-goat-sexio:
     runs-on: ubuntu-latest
     continue-on-error: true
-    if: false
+    if: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
