@@ -421,7 +421,7 @@ jobs:
           cd app/9
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
 
-  ALL(Goat\cex.io):
+  ALL-goat-sexio:
     runs-on: ubuntu-latest
     continue-on-error: true
     if: true
@@ -466,7 +466,7 @@ jobs:
           wget ${{ env.SESSION_CONFIG }}/10/sessions/accounts.json
           chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session accounts.json
 
-      - name: Run Python ALL(Goat\cex.io)
+      - name: Run Python ALL-goat-sexio
         run: |
           cd app/7
           ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
