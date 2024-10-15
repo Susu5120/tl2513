@@ -312,7 +312,7 @@ jobs:
       - name: Downloads Data
         run: |
           cd app/7
-          wget ${{ env.SESSION_CONFIG }}/10/.env
+          wget ${{ env.SESSION_CONFIG }}/7/.env
           chmod +x .env
           cd global_data
           mkdir sessions
@@ -320,7 +320,7 @@ jobs:
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
-          wget ${{ env.SESSION_CONFIG }}/10/sessions/accounts.json
+          wget ${{ env.SESSION_CONFIG }}/7/sessions/accounts.json
           chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session accounts.json
 
       - name: Run Python ALL-goat-sexio
