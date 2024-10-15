@@ -310,8 +310,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd app/7
-          python3 -m venv venv
-          ./venv/bin/pip3 install -r requirements.txt
+          pip3 install -r requirements.txt
 
       - name: Downloads Data
         run: |
@@ -330,7 +329,7 @@ jobs:
       - name: Run Python ALL-goat-sexio
         run: |
           cd app/7
-          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
+          python3 main.py -a 2  # 运行第三个Python脚本
 
   Major:
     runs-on: ubuntu-latest
