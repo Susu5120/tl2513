@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     if: 'true'
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -53,7 +52,6 @@ jobs:
   MemeFi:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -101,7 +99,6 @@ jobs:
   TimeFarm:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -148,7 +145,6 @@ jobs:
   Tomarket:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -196,7 +192,6 @@ jobs:
   YesCoin:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -245,7 +240,6 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     if: 'true'
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -288,7 +282,6 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     if: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -337,7 +330,6 @@ jobs:
   Major:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -385,7 +377,6 @@ jobs:
   Boinkers:
     runs-on: ubuntu-latest
     continue-on-error: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -434,7 +425,6 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     if: true
-    timeout-minutes: 900  # 设置超时时间为15小时
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
