@@ -1,0 +1,5 @@
+export class Config {
+  static TELEGRAM_APP_ID = 25293550; // YOUR APP ID EX : 324893724923
+  static TELEGRAM_APP_HASH = "0b559db059c450a1f9775e8498c3a1ef"; // YOUR APP HASH EX: "aslkfjkalsjflkasf"
+  static AUTOPLAYTAPCOUNT = 10; // COUNT OF AUTOPLAY
+}
