@@ -457,9 +457,9 @@ jobs:
           mkdir accounts
           cd accounts
           mkdir query-Sumengjing-2 query-Susu-3 query-Suyunjing-1
-          wget -O query-Sumengjing-2/query.txt ${{ env.SESSION_CONFIG }}/accounts/query-Sumengjing-2/query.txt
-          wget -O query-Suyunjing-1/query.txt ${{ env.SESSION_CONFIG }}/accounts/query-Suyunjing-1/query.txt
-          wget -O query-Susu-3/query.txt ${{ env.SESSION_CONFIG }}/accounts/query-Susu-3/query.txt
+          wget -O query-Sumengjing-2/query.txt ${{ env.SESSION_CONFIG }}/10/accounts/query-Sumengjing-2/query.txt
+          wget -O query-Suyunjing-1/query.txt ${{ env.SESSION_CONFIG }}/10/accounts/query-Suyunjing-1/query.txt
+          wget -O query-Susu-3/query.txt ${{ env.SESSION_CONFIG }}/10/accounts/query-Susu-3/query.txt
           chmod +x query-Sumengjing-2/query.txt query-Suyunjing-1/query.txt query-Susu-3/query.txt
 
       - name: Run Python Vooi
