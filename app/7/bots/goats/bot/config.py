@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     ACCOUNTS_MOOD_SEQUENTIAL: bool= global_settings.ACCOUNTS_MOOD_SEQUENTIAL
 
 
-    REF_ID: str = "bc4414ff-a92f-4bee-93a7-4270ecf89816"
+    REF_ID: str = global_settings.ACTIVE_BOTS['goats']['REF_ID']
     FAKE_USERAGENT: bool = False
 
 settings = Settings()

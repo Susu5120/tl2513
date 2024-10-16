@@ -16,16 +16,17 @@ class Settings(BaseSettings):
 
 
 
-    ACTIVE_BOTS: dict[str, bool] = {
-    "blum" : False,
-    "catsgang" : False,
-    "catsvsdogs" : True,
-    "cexio" : True,
-    "goats" : True,
-    "major" : False,
-    "notpixel" : False,
-    "tomarket" : False
-    }  
+    ACTIVE_BOTS: dict[str, dict] = {
+        "blum": {"Active": False, "REF_ID": "ref_opNBpxSjqs"},
+        "catsgang": {"Active": False, "REF_ID": "MMhqaWaEsUHFywkvM5hTQ"},
+        "catsvsdogs": {"Active": True, "REF_ID": "6652055484"},
+        "cexio": {"Active": True, "REF_ID": "1726243655151109"},
+        "goats": {"Active": True, "REF_ID": "bc4414ff-a92f-4bee-93a7-4270ecf89816"},
+        "major": {"Active": False, "REF_ID": "6652055484"},
+        "notpixel": {"Active": True, "REF_ID": "f6652055484_s4"},
+        "tomarket": {"Active": False, "REF_ID": "0001pXr6"}
+    }
+    
 
 
 global_settings = Settings()

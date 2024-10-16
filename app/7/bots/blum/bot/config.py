@@ -16,10 +16,10 @@ class Settings(BaseSettings):
     ACCOUNTS_MOOD_SEQUENTIAL: bool= global_settings.ACCOUNTS_MOOD_SEQUENTIAL
 
 
-    PLAY_GAMES: bool = False
+    PLAY_GAMES: bool = False  # Not working for now
     POINTS: list[int] = [190, 230]
 
-    USE_REF: bool = True
-    REF_ID: str = 'ref_opNBpxSjqs'
+    USE_REF: bool = False
+    REF_ID: str = global_settings.ACTIVE_BOTS['blum']['REF_ID']
 
 settings = Settings()
