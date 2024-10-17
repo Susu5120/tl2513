@@ -515,3 +515,43 @@ jobs:
         run: |
           cd app/11
           ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
+
+  Bums:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    env:
+      WP_CONFIG: ${{ secrets.WARP_CONFIG }}
+      SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+
+      - name: Connect InnerWeb
+        run: |
+          mkdir app/warp
+          cd app/warp
+          wget https://github.com/Suyunmeng/pfile/releases/download/public-packages/web.js
+          wget ${{ env.WP_CONFIG }}
+          chmod +x web.js test.json
+          nohup ./web.js -c test.json &
+
+      - name: Install dependencies
+        run: |
+          cd app/12
+          npm install
+
+      - name: Downloads Data
+        run: |
+          cd app/12
+          wget ${{ env.SESSION_CONFIG }}/12/data.txt
+          chmod +x data.txt
+
+      - name: Run Bums
+        run: |
+          cd app/12
+          node bums.js  # 运行第三个Python脚本
