@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     API_HASH: str
 
     USE_REF: bool = True
-    REF_ID: str = 'boink1201989442'
+    REF_ID: str = 'boink355876562'
 
     USE_RANDOM_DELAY_IN_RUN: bool = True
     RANDOM_DELAY_IN_RUN: list[int] = [5, 60]
@@ -35,6 +35,13 @@ class Settings(BaseSettings):
     ]
 
     USE_PROXY_FROM_FILE: bool = True
+
+    ENABLE_AUTO_TASKS: bool = True
+    ENABLE_AUTO_WHEEL_FORTUNE: bool = True
+    ENABLE_AUTO_ELEVATOR: bool = True
+    ELEVATOR_MAX_LEVEL: int = 4
+    ENABLE_AUTO_SPIN: bool = True
+    ENABLE_AUTO_UPGRADE: bool = True
 
 
 settings = Settings()
