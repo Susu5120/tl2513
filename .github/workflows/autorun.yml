@@ -511,7 +511,7 @@ jobs:
           wget ${{ env.SESSION_CONFIG }}/11/sessions/accounts.json
           chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session accounts.json
 
-      - name: Run Python ALL-goat-sexio
+      - name: Run Python Nopixels
         run: |
           cd app/11
-          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
+          ./venv/bin/python3 main.py -a 1  # 运行第三个Python脚本
