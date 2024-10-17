@@ -23,7 +23,7 @@ class Settings(BaseSettings):
         "cexio": {"Active": True, "REF_ID": "1726243655151109"},
         "goats": {"Active": True, "REF_ID": "bc4414ff-a92f-4bee-93a7-4270ecf89816"},
         "major": {"Active": False, "REF_ID": "6652055484"},
-        "notpixel": {"Active": True, "REF_ID": "f6652055484_s4"},
+        "notpixel": {"Active": False, "REF_ID": "f6652055484_s4"},
         "tomarket": {"Active": False, "REF_ID": "0001pXr6"}
     }
     

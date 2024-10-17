@@ -1,0 +1,22 @@
+[
+  {
+    "session_name": "name_example",
+    "user_agent": "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.6422.165 Mobile Safari/537.36",
+    "proxy": "type://user:pass:ip:port"
+  },
+  {
+    "session_name": "Sumengjing-2",
+    "user_agent": "Mozilla/5.0 (Linux; Android 11.0; SM-F916B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.2.9833.1 Mobile Safari/537.36",
+    "proxy": ""
+  },
+  {
+    "session_name": "Susu-3",
+    "user_agent": "Mozilla/5.0 (Linux; Android 10.0; Pixel 6 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.3.7749.2 Mobile Safari/537.36",
+    "proxy": ""
+  },
+  {
+    "session_name": "Suyunjing-1",
+    "user_agent": "Mozilla/5.0 (Linux; Android 11.0; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.1498.60 Mobile Safari/537.36",
+    "proxy": ""
+  }
+]
