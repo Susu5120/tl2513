@@ -306,8 +306,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd app/7
-          python3 -m venv venv
-          ./venv/bin/pip3 install -r requirements.txt
+          pip3 install -r requirements.txt
 
       - name: Downloads Data
         run: |
@@ -326,7 +325,7 @@ jobs:
       - name: Run Python ALL-goat-sexio
         run: |
           cd app/7
-          ./venv/bin/python3 main.py -a 2  # 运行第三个Python脚本
+          python3 main.py -a 2  # 运行第三个Python脚本
 
   Major:
     runs-on: ubuntu-latest
@@ -504,7 +503,6 @@ jobs:
           cd app/11
           wget ${{ env.SESSION_CONFIG }}/11/.env
           chmod +x .env
-          cd global_data
           mkdir sessions
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
