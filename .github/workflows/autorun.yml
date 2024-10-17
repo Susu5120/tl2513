@@ -135,7 +135,8 @@ jobs:
           cd sessions
           wget ${{ env.SESSION_CONFIG }}/sessions/Suyunjing-1.session
           wget ${{ env.SESSION_CONFIG }}/sessions/Sumengjing-2.session
-          chmod +x Suyunjing-1.session Sumengjing-2.session
+          wget ${{ env.SESSION_CONFIG }}/sessions/Susu-3.session
+          chmod +x Suyunjing-1.session Sumengjing-2.session Susu-3.session
 
       - name: Run Python TimeFarm
         run: |
