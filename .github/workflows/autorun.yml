@@ -2,8 +2,8 @@ name: Run Autoclaim
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */5 * * *'
+#  schedule:
+#    - cron: '0 */4 * * *'
 
 concurrency:
   group: 'pythonC'  # 设置唯一的组ID
@@ -13,6 +13,7 @@ jobs:
   Blum:
     runs-on: ubuntu-latest
     continue-on-error: true
+    timeout-minutes: 225
     if: 'true'
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -52,6 +53,7 @@ jobs:
   MemeFi:
     runs-on: ubuntu-latest
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -99,6 +101,7 @@ jobs:
   TimeFarm:
     runs-on: ubuntu-latest
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -145,6 +148,7 @@ jobs:
 
   Tomarket:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -192,6 +196,7 @@ jobs:
 
   YesCoin:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -239,6 +244,7 @@ jobs:
 
   Duckchain:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     if: 'true'
     env:
@@ -281,6 +287,7 @@ jobs:
 
   ALL-goat-sexio:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     if: true
     env:
@@ -330,6 +337,7 @@ jobs:
 
   Major:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -377,6 +385,7 @@ jobs:
 
   Boinkers:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -424,6 +433,7 @@ jobs:
 
   Vooi:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -470,6 +480,7 @@ jobs:
 
   Notpixel:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     if: true
     env:
@@ -519,6 +530,7 @@ jobs:
 
   Bums:
     runs-on: ubuntu-latest
+    timeout-minutes: 225
     continue-on-error: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
