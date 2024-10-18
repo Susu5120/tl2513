@@ -148,8 +148,8 @@ jobs:
 
   Tomarket:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -196,8 +196,8 @@ jobs:
 
   YesCoin:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -244,8 +244,8 @@ jobs:
 
   Duckchain:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     if: 'true'
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -287,8 +287,8 @@ jobs:
 
   ALL-goat-sexio:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     if: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -337,8 +337,8 @@ jobs:
 
   Major:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -385,8 +385,8 @@ jobs:
 
   Boinkers:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -433,8 +433,8 @@ jobs:
 
   Vooi:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
@@ -480,8 +480,8 @@ jobs:
 
   Notpixel:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     if: true
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
@@ -530,8 +530,8 @@ jobs:
 
   Bums:
     runs-on: ubuntu-latest
-    timeout-minutes: 225
     continue-on-error: true
+    timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
       SESSION_CONFIG: ${{ secrets.SESSION_CONFIG }}
