@@ -22,10 +22,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          python-version: 3.10.15  # 选择 Python 版本
+          node-version: 20.x
 
       - name: Connect InnerWeb
         run: |
@@ -39,16 +39,14 @@ jobs:
       - name: Install dependencies
         run: |
           cd app/1
-          python3 -m venv venv
-          ./venv/bin/pip3 install -r requirements.txt
+          npm install
 
       - name: Run Blum
         run: |
-          cd app/1
-          wget ${{ env.SESSION_CONFIG }}/1/data.txt
-          wget ${{ env.SESSION_CONFIG }}/1/database.sqlite3
-          chmod +x data.txt database.sqlite3
-          ./venv/bin/python3 bot.py -A 6  # 运行第一个Python脚本
+          cd app/1/src/data
+          wget ${{ env.SESSION_CONFIG }}/1/users.txt
+          chmod +x users.txt
+          npm run start  # 运行第一个Python脚本
 
   MemeFi:
     runs-on: ubuntu-latest
