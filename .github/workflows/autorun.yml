@@ -100,6 +100,7 @@ jobs:
   TimeFarm:
     runs-on: ubuntu-latest
     continue-on-error: true
+    if: false
     timeout-minutes: 225
     env:
       WP_CONFIG: ${{ secrets.WARP_CONFIG }}
